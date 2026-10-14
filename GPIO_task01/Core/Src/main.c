@@ -114,25 +114,35 @@ int main(void)
     uint8_t rem = num % 2;
     if (rem == 1)
     {
+<<<<<<< HEAD
       *pECrl = *pECrl & ~((1<<23)|(1<<21)|(1<<22));
+=======
+      *pECrl = *pECrl & ~((1<<23)|(1<<21)|(1<<22)|(1<<20));
+>>>>>>> 65606ac (第一次提交)
       *pECrl = *pECrl | (1<<20);//让PE5推挽输出，MODE设置为低速
       *pEOdr = *pEOdr | (1<<5);//点亮PE5的LED1
       *pBOdr = *pBOdr & ~(1<<5);//熄灭PB5的LED0
     }
     else
     {
+<<<<<<< HEAD
       *pBCrl = *pBCrl & ~((1<<23)|(1<<21)|(1<<22));
+=======
+      *pBCrl = *pBCrl & ~((1<<23)|(1<<21)|(1<<22)|(1<<20));
+>>>>>>> 65606ac (第一次提交)
       *pBCrl = *pBCrl | (1<<20);//让PB5推挽输出，MODE设置为低速
       *pBOdr = *pBOdr | (1<<5);//点亮PB5的LED0
       *pEOdr = *pEOdr & ~(1<<5);//熄灭PE5的LED1
     }
   }
 
+
   int a = 1;
   while (1)
   {
     lightUp(a);
     a++;
+
     for (volatile int i = 0; i < 125000; i++);
   }
 
