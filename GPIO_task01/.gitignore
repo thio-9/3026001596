@@ -1,0 +1,48 @@
+# 1. 编译输出目录 (绝对不能传)
+build/
+cmake-build-*/
+Debug/
+Release/
+
+# 2. IDE 和编辑器本地配置 (绝对不能传)
+.idea/
+.vscode/
+.mxproject
+.cache/
+
+# 3. 操作系统垃圾文件
+.DS_Store
+Thumbs.db
+
+# 4. 编译中间产物
+*.o
+*.obj
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.d
+*.ninja_deps
+*.ninja_log
+
+# 5. 过滤掉 CMSIS 中庞大且无用的官方测试和例程 (交作业不需要)
+Drivers/CMSIS/DSP/Examples/
+Drivers/CMSIS/DSP/Lib/TestSuite/
+Drivers/CMSIS/DSP/Testing/
+Drivers/CMSIS/DSP/DSP_Lib_TestSuite/
+
+# 6. 强制保留 CMake 构建文件 (重要)
+!*/CMakeLists.txt
+!CMakeLists.txt
+!*.ioc
+
+# 忽略整个 CMSIS DSP 库
+Drivers/CMSIS/DSP/
+
+# 忽略整个 CMSIS 库下的所有组件（DSP, NN等），保留必须的核心文件
+Drivers/CMSIS/NN/
+Drivers/CMSIS/NN_Lib_Tests/
+
+Drivers/CMSIS/Core_A/
+
