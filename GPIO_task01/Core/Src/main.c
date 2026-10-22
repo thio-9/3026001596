@@ -124,7 +124,16 @@ int main(void)
       *pBCrl = *pBCrl & ~((1<<23)|(1<<21)|(1<<22));
       *pBCrl = *pBCrl | (1<<20);//让PB5推挽输出，MODE设置为低速
       *pBOdr = *pBOdr | (1<<5);//点亮PB5的LED0
+    }
+  }
 
+  int a = 1;
+  while (1)
+  {
+    lightUp(a);
+    a++;
+    for (volatile int i = 0; i < 12500; i++);
+  }
 
   /* USER CODE END 2 */
 
